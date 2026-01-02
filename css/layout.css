@@ -1,0 +1,43 @@
+#layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  height: 100vh;
+}
+
+#enrollment-form {
+  overflow-y: auto;
+  margin-left: auto;
+  & > .main-container {
+    max-width: 33rem;
+
+    & > header > .back > img {
+      width: 1.5rem;
+    }
+  }
+}
+
+#illustration {
+  overflow: hidden;
+  background-color: var(--surface-secondary);
+
+  & > .aside-container {
+    max-width: 31rem;
+
+    img {
+      margin-top: 2rem;
+      object-fit: cover;
+    }
+
+    header {
+      & > img {
+        width: 12.6rem;
+        height: 2rem;
+      }
+
+      & > h1 > span {
+        color: var(--text-highlight);
+      }
+    }
+  }
+}

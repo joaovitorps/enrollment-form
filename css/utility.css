@@ -1,0 +1,43 @@
+.container {
+  padding: 4rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.column-gap-8 {
+  column-gap: 0.5rem;
+}
+
+.row-gap-8 {
+  row-gap: 0.5rem;
+}
+
+.row-gap-16 {
+  row-gap: 1.5rem;
+}
+
+.row-gap-32 {
+  row-gap: 2rem;
+}
+
+.row-gap-48 {
+  row-gap: 3rem;
+}
+
+.title {
+  font: var(--title);
+}
+
+.h2 {
+  font: var(--h2);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
