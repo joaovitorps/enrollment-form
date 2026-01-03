@@ -39,7 +39,7 @@
               <div>
                 <label class="form-label" for="name">Nome completo</label>
                 <input
-                  class="form-control error"
+                  class="form-control"
                   id="name"
                   name="name"
                   type="text"
@@ -142,6 +142,46 @@
                     value="SP"
                     disabled
                   />
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="responsible-info flex flex-column row-gap-24">
+              <legend class="h4">Informações do responsável</legend>
+              <div>
+                <label for="res-name" class="form-label"></label
+                ><input
+                  id="res-name"
+                  name="res-name"
+                  type="text"
+                  class="form-control"
+                  value="Miguel Roberto Alves"
+                />
+                <p class="helper-text">
+                  Principal responsável legal e contato de emergência
+                </p>
+              </div>
+              <div>
+                <label for="res-phone" class="form-label">Telefone</label
+                ><input
+                  id="res-phone"
+                  name="res-phone"
+                  type="text"
+                  class="form-control"
+                  value="(10) 9 8765-4321"
+                />
+              </div>
+              <div>
+                <label for="res-mail" class="form-label">E-mail</label>
+                <input
+                  id="res-mail"
+                  name="res-mail"
+                  type="text"
+                  class="form-control error"
+                  value="papailegal123"
+                />
+                <div class="error-msg">
+                  <img src="/assets/icons/alert-circle.svg" alt="" />
+                  <span>Insira um e-mail válido</span>
                 </div>
               </div>
             </fieldset>

@@ -175,3 +175,27 @@ select:open {
 textarea.form-control {
   height: 7.5rem;
 }
+
+.helper-text {
+  color: #78716c;
+  font: var(--text-sm);
+  margin-top: 0.25rem;
+}
+
+.error {
+  border: 0.125rem var(--semantic-error) solid;
+}
+
+.error-msg {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  margin-top: 0.25rem;
+
+  color: var(--semantic-error);
+  font: var(--text-sm);
+
+  & > img {
+    width: 1.25rem;
+  }
+}
