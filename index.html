@@ -29,7 +29,11 @@
               </p>
             </div>
           </header>
-          <form action="POST" enctype="multipart/form-data">
+          <form
+            class="flex flex-column row-gap-48"
+            action="POST"
+            enctype="multipart/form-data"
+          >
             <fieldset id="child-info" class="flex flex-column row-gap-24">
               <legend class="h4">Informações da criança</legend>
               <div>
@@ -81,6 +85,64 @@
                   >Certidão de nascimento</label
                 >
                 <input class="form-control" type="file" name="id" id="id" />
+              </div>
+            </fieldset>
+            <fieldset class="residential-info">
+              <legend class="h4">Endereço residencial</legend>
+              <div class="grid row-gap-24">
+                <div>
+                  <label class="form-label" for="zip">CEP</label>
+                  <input
+                    id="zip"
+                    name="zip"
+                    class="form-control"
+                    type="text"
+                    value="01234-567"
+                  />
+                </div>
+                <div>
+                  <label class="form-label" for="street">Rua</label>
+                  <input
+                    id="street"
+                    name="street"
+                    type="text"
+                    class="form-control"
+                    value="Rua das Flores"
+                    disabled
+                  />
+                </div>
+                <div>
+                  <label class="form-label" for="number">Número</label>
+                  <input
+                    id="number"
+                    name="number"
+                    type="text"
+                    class="form-control"
+                    value="123"
+                  />
+                </div>
+                <div>
+                  <label class="form-label" for="city">Cidade</label>
+                  <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    class="form-control"
+                    value="São Paulo"
+                    disabled
+                  />
+                </div>
+                <div>
+                  <label class="form-label" for="state">Estado</label>
+                  <input
+                    id="state"
+                    name="state"
+                    type="text"
+                    class="form-control"
+                    value="SP"
+                    disabled
+                  />
+                </div>
               </div>
             </fieldset>
           </form>

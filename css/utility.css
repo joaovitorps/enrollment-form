@@ -10,6 +10,10 @@
   flex-direction: column;
 }
 
+.grid {
+  display: grid;
+}
+
 .column-gap-8 {
   column-gap: 0.5rem;
 }
@@ -55,6 +59,11 @@ label.form-label {
   font: var(--text-sm);
   color: var(--text-secondary);
   margin-bottom: 0.25rem;
+
+  &:has(+ :disabled),
+  & + input:is(:disabled) {
+    opacity: 50%;
+  }
 }
 
 input,
@@ -64,6 +73,8 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  font: var(--text);
 
   border: 1px, var(--stroke-default) solid;
   border-radius: 0.5rem;
@@ -78,6 +89,10 @@ textarea {
 }
 
 input.form-control {
+  &:disabled {
+    background-color: var(--surface-disabled);
+  }
+
   &[type="date"] {
     position: relative;
 
