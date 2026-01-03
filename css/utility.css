@@ -115,15 +115,6 @@ input.form-control {
 
     display: flex;
 
-    &:hover {
-      &::before {
-        background-image: url(/assets/icons/cloud-upload-hover.svg);
-      }
-
-      border-color: var(--stroke-highlight);
-      background-color: var(--surface-secondary);
-    }
-
     &::before {
       background-image: url(/assets/icons/cloud-upload.svg);
 
@@ -132,6 +123,15 @@ input.form-control {
       content: "";
       width: 3rem;
       height: 3rem;
+    }
+
+    &:hover {
+      border-color: var(--stroke-highlight);
+      background-color: var(--surface-secondary);
+
+      &::before {
+        background-image: url(/assets/icons/cloud-upload-hover.svg);
+      }
     }
 
     &::after {
