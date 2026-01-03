@@ -29,6 +29,61 @@
               </p>
             </div>
           </header>
+          <form action="">
+            <div id="child-info" class="flex flex-column row-gap-24">
+              <h4 class="h4">Informações da criança</h4>
+              <div>
+                <label class="form-label" for="name">Nome completo</label>
+                <input
+                  class="form-control error"
+                  id="name"
+                  name="name"
+                  type="text"
+                  value="Maria Luiza Alves"
+                />
+              </div>
+              <div>
+                <label class="form-label" for="birth-date"
+                  >Data de nascimento</label
+                >
+                <input
+                  class="form-control"
+                  type="date"
+                  name="birth-date"
+                  id="birth-date"
+                  value="2019-05-06"
+                />
+              </div>
+              <div>
+                <label class="form-label" for="gender">Sexo</label>
+                <select
+                  style="display: block"
+                  class="form-select"
+                  name="gender"
+                  id="gender"
+                >
+                  <option value="f">Feminino</option>
+                  <option value="m">Masculino</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label" for="med-info">
+                  Informações médicas
+                </label>
+                <textarea
+                  class="form-control"
+                  name="med-info"
+                  id="med-info"
+                ></textarea>
+              </div>
+              <div>
+                <label class="form-label" for="id"
+                  >Certidão de nascimento</label
+                >
+                <input class="form-control" type="file" name="id" id="id" />
+              </div>
+            </div>
+          </form>
         </div>
       </main>
       <aside id="illustration" class="container flex flex-column row-gap-32">

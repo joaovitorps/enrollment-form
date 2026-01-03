@@ -19,6 +19,10 @@
 }
 
 .row-gap-16 {
+  row-gap: 1rem;
+}
+
+.row-gap-24 {
   row-gap: 1.5rem;
 }
 
@@ -38,6 +42,122 @@
   font: var(--h2);
 }
 
+.h4 {
+  font: var(--h4);
+}
+
 .text-secondary {
   color: var(--text-secondary);
+}
+
+label.form-label {
+  display: inline-block;
+  font: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  display: block;
+
+  border: 0.0625em, var(--stroke-default) solid;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  background-color: var(--surface-primary);
+
+  &:focus {
+    box-shadow: 0 0 0.25rem var(--surface-secondary);
+    border: 0.125rem, solid, var(--stroke-highlight) !important;
+  }
+}
+
+input.form-control {
+  &[type="date"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+
+    &::after {
+      content: url(/assets/icons/calendar-03.svg);
+      height: 1.5rem;
+    }
+  }
+
+  &[type="file"] {
+    color: transparent;
+
+    &::file-selector-button {
+      display: none;
+    }
+
+    width: 100%;
+    height: 10rem;
+    padding: 1.5rem 1rem;
+
+    border: dashed 0.18rem;
+    border-color: var(--stroke-default);
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+
+    display: flex;
+
+    &:hover {
+      &::before {
+        background-image: url(/assets/icons/cloud-upload-hover.svg);
+      }
+
+      border-color: var(--stroke-highlight);
+      background-color: var(--surface-secondary);
+    }
+
+    &::before {
+      background-image: url(/assets/icons/cloud-upload.svg);
+
+      margin-top: 0.25rem;
+      justify-self: center;
+      content: "";
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &::after {
+      width: 9.8125rem;
+
+      color: #a8a29e;
+      font: var(--text);
+      justify-self: center;
+      text-wrap: wrap;
+      content: "Clique aqui para selecionar arquivos";
+      text-align: center;
+    }
+  }
+}
+
+select,
+::picker(select) {
+  background: no-repeat calc(100% - 1rem) / 1.5rem
+    url(/assets/icons/arrow-down-01.svg);
+}
+
+select:open {
+  background: no-repeat calc(100% - 1rem) / 1.5rem
+    url(/assets/icons/arrow-up-01.svg);
+}
+
+textarea.form-control {
+  height: 7.5rem;
 }
