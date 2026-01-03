@@ -71,7 +71,7 @@ textarea {
   width: 100%;
   background-color: var(--surface-primary);
 
-  &:focus {
+  &:focus-within {
     outline: 0.25rem solid var(--surface-secondary);
     border: 0.125rem, solid, var(--stroke-highlight) !important;
   }
@@ -79,10 +79,6 @@ textarea {
 
 input.form-control {
   &[type="date"] {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
-
     position: relative;
 
     &::-webkit-calendar-picker-indicator {
@@ -91,10 +87,12 @@ input.form-control {
     }
 
     &::after {
-      position: absolute;
       content: url(/assets/icons/calendar-03.svg);
+
+      position: absolute;
       height: 1.5rem;
       right: 1rem;
+
       top: 50%;
       transform: translateY(-50%);
     }
@@ -111,8 +109,7 @@ input.form-control {
     height: 10rem;
     padding: 1.5rem 1rem;
 
-    border: dashed 0.18rem;
-    border-color: var(--stroke-default);
+    border: dashed 1px var(--stroke-default);
     border-radius: 0.5rem;
 
     cursor: pointer;
@@ -129,8 +126,9 @@ input.form-control {
       height: 3rem;
     }
 
-    &:hover {
-      border-color: var(--stroke-highlight);
+    &:hover,
+    &:focus {
+      border: 0.125rem dashed var(--stroke-highlight) !important;
       background-color: var(--surface-secondary);
 
       &::before {
