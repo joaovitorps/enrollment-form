@@ -61,3 +61,7 @@ img {
 fieldset {
   border: none;
 }
+
+legend {
+  margin-bottom: 1.5rem;
+}

@@ -21,10 +21,6 @@
   }
 }
 
-#child-info legend {
-  margin-bottom: 1.5rem;
-}
-
 #illustration {
   overflow: hidden;
   background-color: var(--surface-secondary);
