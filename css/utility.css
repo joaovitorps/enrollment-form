@@ -10,12 +10,24 @@
   flex-direction: column;
 }
 
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
 .grid {
   display: grid;
 }
 
+.gap-16 {
+  gap: 1rem;
+}
+
 .column-gap-8 {
   column-gap: 0.5rem;
+}
+
+.column-gap-16 {
+  column-gap: 1rem;
 }
 
 .row-gap-8 {
@@ -64,11 +76,14 @@ label.form-label {
   & + input:is(:disabled) {
     opacity: 50%;
   }
+
+  & > span {
+    color: var(--stroke-highlight);
+  }
 }
 
-input,
-select,
-textarea {
+.form-control,
+select {
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -86,9 +101,7 @@ textarea {
     outline: 0.25rem solid var(--surface-secondary);
     border: 0.125rem, solid, var(--stroke-highlight) !important;
   }
-}
 
-input.form-control {
   &:disabled {
     background-color: var(--surface-disabled);
   }
@@ -172,6 +185,101 @@ input.form-control {
   }
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.form-check-container > div.flex {
+  flex-wrap: wrap;
+}
+
+.form-check {
+  min-width: 7.5rem;
+
+  background-color: var(--surface-primary);
+  border: solid var(--stroke-default) 1px;
+  border-radius: 0.5rem;
+  padding-inline: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  align-items: center;
+
+  position: relative;
+
+  cursor: pointer;
+
+  &:hover,
+  &:hover > .form-check-input,
+  &:has(input[type="radio"]:checked) {
+    border-color: var(--stroke-highlight);
+  }
+
+  & > input[type="radio"]:checked + .form-check-input {
+    background-color: var(--stroke-highlight);
+    border-color: var(--stroke-highlight);
+  }
+
+  & > img {
+    margin-bottom: 0.5rem;
+    width: 3rem;
+  }
+
+  & > .form-check-input {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    border-radius: 1rem;
+  }
+}
+
+.custom-checkbox {
+  display: grid;
+  column-gap: 0.75rem;
+  grid-auto-flow: column;
+  grid-template-columns: 1.5rem 1fr;
+
+  & > .form-label {
+    font: var(--text);
+    cursor: pointer;
+  }
+
+  & > .form-check-input {
+    position: relative;
+    border-radius: 0.5rem;
+  }
+}
+
+.form-check-input {
+  border: var(--stroke-default) solid 0.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  &:has(input:checked) {
+    background-color: var(--stroke-highlight);
+    border-color: var(--stroke-highlight);
+  }
+
+  &:hover,
+  &:has(+ .form-label:hover) {
+    border-color: var(--stroke-highlight);
+  }
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & > path {
+      fill: var(--surface-primary);
+    }
+  }
+}
+
 select {
   background: no-repeat calc(100% - 1rem) url(/assets/icons/arrow-down-01.svg);
 }
@@ -204,4 +312,33 @@ textarea.form-control {
   & > img {
     width: 1.25rem;
   }
+}
+
+.btn-group {
+  padding-top: 1rem;
+  justify-content: end;
+  column-gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--text-highlight);
+  background-color: var(--surface-primary);
+  color: var(--text-highlight);
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn.btn-primary {
+  background-color: var(--brand-dark);
+  color: var(--surface-primary);
+
+  &:hover {
+    background-color: var(--brand-mid);
+  }
+}
+
+.btn.btn-secondary:hover {
+  outline: solid 0.25rem var(--surface-secondary);
 }
