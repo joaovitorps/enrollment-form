@@ -93,6 +93,14 @@ input.form-control {
     background-color: var(--surface-disabled);
   }
 
+  &:invalid {
+    border: 0.125rem var(--semantic-error) solid;
+  }
+
+  &:not(:focus):valid + .error-msg {
+    display: none;
+  }
+
   &[type="date"] {
     position: relative;
 
@@ -179,11 +187,9 @@ textarea.form-control {
 .helper-text {
   color: #78716c;
   font: var(--text-sm);
-  margin-top: 0.25rem;
-}
 
-.error {
-  border: 0.125rem var(--semantic-error) solid;
+  display: inline-block;
+  margin-top: 0.25rem;
 }
 
 .error-msg {
