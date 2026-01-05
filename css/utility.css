@@ -91,7 +91,8 @@ select {
 
   font: var(--text);
 
-  border: 1px, var(--stroke-default) solid;
+  border: 0.125rem solid transparent;
+  outline: solid 1px var(--stroke-default);
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
   width: 100%;
@@ -99,7 +100,7 @@ select {
 
   &:focus-within {
     outline: 0.25rem solid var(--surface-secondary);
-    border: 0.125rem, solid, var(--stroke-highlight) !important;
+    border-color: var(--stroke-highlight);
   }
 
   &:disabled {
@@ -194,13 +195,11 @@ input[type="checkbox"] {
   z-index: 1;
 }
 
-.form-check-container > div.flex {
-  flex-wrap: wrap;
+.form-check-container > div.grid {
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
 }
 
 .form-check {
-  min-width: 7.5rem;
-
   background-color: var(--surface-primary);
   border: solid var(--stroke-default) 1px;
   border-radius: 0.5rem;
@@ -214,6 +213,7 @@ input[type="checkbox"] {
   cursor: pointer;
 
   &:hover,
+  &:focus-within,
   &:hover > .form-check-input,
   &:has(input[type="radio"]:checked) {
     border-color: var(--stroke-highlight);
@@ -265,6 +265,7 @@ input[type="checkbox"] {
   }
 
   &:hover,
+  &:focus-within,
   &:has(+ .form-label:hover) {
     border-color: var(--stroke-highlight);
   }
@@ -328,6 +329,11 @@ textarea.form-control {
   color: var(--text-highlight);
   font: inherit;
   cursor: pointer;
+
+  &:focus,
+  .btn.btn-secondary:hover {
+    outline: solid 0.25rem var(--surface-secondary);
+  }
 }
 
 .btn.btn-primary {
@@ -337,8 +343,4 @@ textarea.form-control {
   &:hover {
     background-color: var(--brand-mid);
   }
-}
-
-.btn.btn-secondary:hover {
-  outline: solid 0.25rem var(--surface-secondary);
 }
